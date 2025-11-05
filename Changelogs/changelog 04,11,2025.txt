@@ -1,0 +1,15 @@
+Added:
+    Added several groups and functionality to the code. This being:
+        Additions to the __init__ function of the game class.
+        Additions to the load_maps function.
+        Additions to the new_game function.
+            Currently contains a reference to the quit_game function in order to prevent the window from remaining when attempting to close.
+        Additions to the get_groups function.
+
+Changed:
+    Changed the quotation marks to speech marks for the function docstrings.
+
+Removed:
+    Removed a random comment saying "hello" as I don't know why it was there.
+
+Misc notes:
