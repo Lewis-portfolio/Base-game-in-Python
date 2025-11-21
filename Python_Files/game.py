@@ -46,8 +46,8 @@ class Game():
         self.load_maps()
         # self.get_level()
         self.get_groups()
-        print(self.maps)
         # Temporary to be removed:
+        print(self.maps)
         self.quit_game()
 
     def get_groups(self):
@@ -56,6 +56,7 @@ class Game():
         self.groups["all_sprites"] = all_sprites
         for group in ["walls", "mobs", "bullets", "items"]:
             self.groups[group] = PG.sprite.Group()
+            print(group)
 
     def run_game(self):
         """ Runs the game. """
