@@ -5,16 +5,12 @@
 
 # Imports:
 import sys
-from os import path
+import os
 import pygame as PG
-import settings
+os.path.join(os.getcwd(), os.path.dirname(os.path.abspath(__file__)))
+from python_files import settings
 from python_files import maps
 from python_files.loaders import map_class
-
-
-
-WIDTH = 1024
-HEIGHT = 768
 
 
 class Game():
@@ -24,7 +20,7 @@ class Game():
         # Initialise the game window:
         PG.init()
         PG.mixer.init()
-        self.screen = PG.display.set_mode((WIDTH, HEIGHT))
+        self.screen = PG.display.set_mode((settings.WIDTH, settings.HEIGHT))
         PG.display.set_caption("Base Game")
         #------------------------------------------------#
         # Preparation for updates:
@@ -39,7 +35,7 @@ class Game():
         self.maps = {}
         self.c_map = None
         # Loading data:
-        self.game_folder = path.dirname(game_exe)
+        self.game_folder = os.path.dirname(game_exe)
         self.load_maps()
         self.get_level()
 
@@ -84,6 +80,11 @@ class Game():
 
     def game_events(self):
         """ The events of a game. """
+        for event in PG.event.get():
+            if event.type == PG.QUIT:
+                if self.running:
+                    self.running = False
+                    self.quit_game()
 
     def game_updates(self):
         """ The update events for the game. """
