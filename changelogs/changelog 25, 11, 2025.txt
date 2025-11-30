@@ -1,0 +1,34 @@
+Added:
+    Misc:
+        Added a map class to be able to load maps.
+    game:
+        Added self.dt which is used for delta time.
+        Added self.is_paused which is used to check if the player pauses the game.
+        Added self.c_map which referenced to the current map.
+        Added a main folder reference.
+        Added references to load_maps and get_level:
+            this is to call those functions.
+        Added basic functionality to the run_game functions.
+    Added a map_class file:
+        This is to process, load and navigate maps via the reference in the python file called game.
+    Added maps file to hold the maps variable:
+        This is to make it easier to find where to add a map reference after adding one to the maps folder.
+    Added a settings file to handle game settings.
+
+
+Changed:
+    Misc:
+        The file structure so that all folders and file names have no capitals.
+        The way the print statements look e.g.,
+            Rather than just printing the variable it prints where the statement is
+    Main:
+        un-commented the OS import in main as it's now being used.
+    base_sprite_class and wall_class:
+        changed the parameters from with and height (w,h) to dimensions as this will pass in both the width and height.
+    game:
+        Changed the parameters in the __init__ method to allow the main file to be passed in.
+        Changed the load_maps method to better streamline it.
+
+Removed:
+    In wall_class:
+        The importation of pygame as it's not required.

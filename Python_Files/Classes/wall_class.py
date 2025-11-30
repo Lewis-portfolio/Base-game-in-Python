@@ -4,11 +4,10 @@
 ''' This is the wall Class in python. '''
 
 # Imports:
-import pygame as PG
 from base_sprite_class import BaseObjectClass
 
 class ObstacleClass(BaseObjectClass):
     """ A class for walls. """
-    def __init__(self, game, pos, w, h):
+    def __init__(self, game, pos, dimensions = (32, 32)):
         self.group = game.groups["walls"]
-        super().__init__(game, self.group, pos, w, h)
+        super().__init__(game, self.group, pos, dimensions)

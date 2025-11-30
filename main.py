@@ -6,11 +6,11 @@
 # Imports:
 # modules:
 # import sys
-# from os import path
+from os import path
 # # My files:
-import Python_Files.game as GAME
+import python_files.game as GAME
 
-game = GAME.Game()
+game = GAME.Game(path.dirname(path.abspath(__file__)))
 
 game.show_start_screen()
 while game.running:

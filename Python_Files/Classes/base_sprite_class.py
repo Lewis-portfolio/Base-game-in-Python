@@ -9,10 +9,10 @@ import pygame as PG
 
 class BaseObjectClass(PG.sprite.Sprite):
     """ The basics of every object in the game. """
-    def __init__(self, game, groups, pos, w, h):
+    def __init__(self, game, groups, pos, dimensions = (32, 32)):
         self.groups = groups
         PG.sprite.Sprite.__init__(self, self.groups)
         self.game = game
-        self.rect = PG.Rect((pos), w, h)
+        self.rect = PG.Rect((pos), dimensions)
         self.pos = pos
         self.rect.x , self.rect.y = pos
